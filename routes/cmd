@@ -1,0 +1,14 @@
+====> specialties
+
+php artisan make:model Specialties -mcr
+php artisan make:model Images -mcr
+SpecialtiesRepositoryInterface
+SpecialtiesRepository
+
+====> Medcine
+
+php artisan make:model Medcine - mcr
+php artisan make:model Images - mcr
+
+php artisan vendor:publish
+
