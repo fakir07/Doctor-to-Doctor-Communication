@@ -35,7 +35,7 @@
             <!--begin::Container-->
             <div id="kt_content_container" class="container-xxl">
                 @if (count($errors) > 0)
-                 
+
                     <div class="alert alert-danger d-flex align-items-center p-5 mb-10">
                         <!--begin::Svg Icon | path: icons/duotune/general/gen048.svg-->
                         <span class="svg-icon svg-icon-2hx svg-icon-danger me-4">
@@ -164,8 +164,7 @@
                                                 </td>
                                                 <td>
                                                     <div class="d-flex justify-content flex-shrink-0">
-                                                        <a href="#" data-bs-toggle="modal"
-                                                            data-bs-target="#update{{ $medcine->id }}"
+                                                        <a href="{{ route('medcine.edit',$medcine->id)}}"
                                                             class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
                                                             <!--begin::Svg Icon | path: icons/duotune/art/art005.svg-->
                                                             <span class="svg-icon svg-icon-3">
@@ -204,6 +203,51 @@
                                                     </div>
                                                 </td>
                                             </tr>
+
+
+                                            <!-- modul delte -->
+                                            <div class="modal fade" tabindex="-1" id="delete{{ $medcine->id }}">
+                                                <div class="modal-dialog mw-650px">
+                                                    <div class="modal-content">
+                                                        <div class="modal-body">
+                                                            <form
+                                                                action="{{ URL::route('medcine.destroy', 'delete') }}"
+                                                                method="POST" id="kt_modal_new_target_form"
+                                                                class="form">
+                                                                @method('delete')
+                                                                @csrf
+                                                                <!--begin::Heading-->
+                                                                <div class="mb-13 text-center">
+                                                                    <!--begin::Title-->
+                                                                    <h1 class="mb-3">Supperimer un Medcine</h1>
+
+                                                                </div>
+                                                                <!--end::Heading-->
+                                                                <!--begin::Input group-->
+                                                                <div class="d-flex flex-column mb-8 fv-row">
+                                                                    <!--begin::Label-->
+                                                                    <label
+                                                                        class="d-flex align-items-center fs-6 fw-bold mb-2">
+                                                                        <span class="required">voulez-vous
+                                                                            supprimer medcine </span>
+                                                                        <code>{{ $medcine->name }}</code>
+                                                                        <input type="hidden" id="id"
+                                                                            name="id" value="{{ $medcine->id }}">
+                                                                    </label>
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-light"
+                                                                        data-bs-dismiss="modal">Fermer</button>
+                                                                    <button type="submit"
+                                                                        class="btn btn-primary">Supprimer
+                                                                    </button>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- end modal delete -->
                                         @endforeach
                                     @endif
                                 </tbody>

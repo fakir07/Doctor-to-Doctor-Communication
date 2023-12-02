@@ -5,6 +5,7 @@ use App\Http\Controllers\SpecialtiesController;
 use App\Http\Controllers\MedcineController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\DemandeDavisController;
 
 
 
@@ -27,9 +28,12 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 //////////////// Medcine
      Route::resource('medcine',MedcineController::class);
 
-
+//////////////// Roles
     Route::resource('roles',RoleController::class);
+//////////////// Users
     Route::resource('users',UserController::class);
+//////////////// Users
+    Route::resource('demandeDavis',DemandeDavisController::class);
 
 
 });

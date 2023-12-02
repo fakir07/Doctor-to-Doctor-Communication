@@ -24,7 +24,7 @@
                     </li>
                     <!--end::Item-->
                     <!--begin::Item-->
-                   
+
                     <!--end::Item-->
                     <!--begin::Item-->
                     <li class="breadcrumb-item text-dark">Ajouter medcine</li>
@@ -126,13 +126,13 @@
         <!--end::Container-->
     </div>
     <!--end::Toolbar-->
-    
+
     <!--begin::Post-->
     <div class="post d-flex flex-column-fluid" id="kt_post">
         <!--begin::Container-->
         <div id="kt_content_container" class="container-xxl">
             @if (count($errors) > 0)
-                 
+
                     <div class="alert alert-danger d-flex align-items-center p-5 mb-10">
                         <!--begin::Svg Icon | path: icons/duotune/general/gen048.svg-->
                         <span class="svg-icon svg-icon-2hx svg-icon-danger me-4">
@@ -383,8 +383,8 @@
 															<label class="required fs-5 fw-bold mb-2">Date debute</label>
 															<!--end::Label-->
 															<!--end::Input-->
-                                                            <input type="date" name="date_debut" class="form-control mb-2"
-                                                            value="">
+                                                            <input type="date" name="date_debut" class="form-control mb-2" value="{{ now()->toDateString() }}"
+                                                            >
 															<!--end::Input-->
 														<div class="fv-plugins-message-container invalid-feedback"></div></div>
 														<!--end::Col-->
