@@ -2,20 +2,26 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\demandeDavis;
 use App\Models\Medcine;
-use App\Http\Controllers\Controller;
+use App\Models\Specialties;
+use App\Models\demandeDavis;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class DemandeDavisController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $medcines = Medcine::all();
-        return view('demandedavis.index',compact('medcines'));
+        $specialties = Specialties::all();
+         if($request){
+            $medcines = Medcine::where('specialties',$request->id_specialties)->get();
+         }else{
+            $medcines = Medcine::all();
+         }
+        return view('demandedavis.index',compact('medcines','specialties'));
     }
 
     /**
