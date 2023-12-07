@@ -3,7 +3,7 @@
     <div class="aside-logo flex-column-auto" id="kt_aside_logo">
         <!--begin::Logo-->
         <a >
-            <img alt="Logo" src="assets/media/logos/logo-1-dark.jpg" class="h-50px  rounded logo">
+            <img alt="Logo" src="{{asset('assets/media/logos/logo-1-dark.jpg ')}}" class="h-50px  rounded logo">
         </a>
         <!--end::Logo-->
         <!--begin::Aside toggler-->
@@ -50,6 +50,16 @@
                                         <span class="bullet bullet-dot"></span>
                                     </span>
                                     <span class="menu-title"> Liste des Medcine</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="menu-sub menu-sub-accordion menu-active-bg">
+                            <div class="menu-item">
+                                <a class="menu-link" href="{{ URL::route('demandeDavis.show','show') }}">
+                                    <span class="menu-bullet">
+                                        <span class="bullet bullet-dot"></span>
+                                    </span>
+                                    <span class="menu-title"> Liste  Demande d'avis</span>
                                 </a>
                             </div>
                         </div>

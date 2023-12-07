@@ -9,6 +9,8 @@
     <link href="{{ asset('assets/css/fontawesome.min.css')}}" rel="stylesheet" type="text/css"/>
     <link href="{{ asset('assets/css/jquery.dataTables.min.css')}}" rel="stylesheet" type="text/css"/>
     <link href="{{ asset('assets/css/css.css')}}" rel="stylesheet" type="text/css"/>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
 
 
     <title>

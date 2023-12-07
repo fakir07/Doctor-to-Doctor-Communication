@@ -1,7 +1,7 @@
 ====> specialties
 
 php artisan make:model Specialties -mcr
-php artisan make:model Images -mcr
+php artisan make:model ImagesDavis -mcr
 php artisan make:model demandeDavis -mcr
 SpecialtiesRepositoryInterface
 SpecialtiesRepository
@@ -12,4 +12,3 @@ php artisan make:model Medcine - mcr
 php artisan make:model Images - mcr
 
 php artisan vendor:publish
-

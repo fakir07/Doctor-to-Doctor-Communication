@@ -56,7 +56,7 @@
             <!--begin::Actions-->
             <div class="d-flex align-items-center gap-2 gap-lg-3">
                 <!--begin::Filter menu-->
-                <div>  
+                <div>
                     <button type="button" class="btn btn-sm btn-flex btn-light btn-active-primary fw-bolder  " data-kt-menu-trigger="click"
                         data-kt-menu-placement="bottom-end">
                         <!--begin::Svg Icon | path: icons/duotune/general/gen031.svg-->
@@ -82,7 +82,7 @@
                         <div class="separator border-gray-200"></div>
                         <!--end::Menu separator-->
                         <!--begin::Form-->
-                        <form action="" method="get">
+                        <form action="{{ route('demandeDavis.index') }}" method="get">
                             @csrf
                             <div class="px-7 py-5">
                                 <!--begin::Input group-->
@@ -91,8 +91,9 @@
                                     <label class="form-label fw-bold">Parent:</label>
                                     <!--end::Label-->
                                     <!--begin::Input-->
-                                        <select name="status"  class="form-select form-select-sm " >
+                                        <select name="id_specialties"  class="form-select form-select-sm " >
                         <option value="choisir a spécialité" selected="selected" disabled >choisir a spécialité</option>
+                        <option value="all" >all</option>
                     @foreach ($specialties as $specialtie )
                         <option value="{{$specialtie->id}}">{{$specialtie->specialty_name}}</option>
                     @endforeach
@@ -111,12 +112,12 @@
                         </form>
                         <!--end::Form-->
                     </div>
-                  
-             
+
+
 
 
             </div>
-              
+
             </div>
             <!--end::Actions-->
         </div>
@@ -130,14 +131,14 @@
             <!--begin::Navbar-->
 
             <!--end::Navbar-->
-{{--             
+{{--
             <div class="d-flex justify-content-between">
 
 
                 <div > <h3 class="fw-bolder my-2">My Connections
                     <span class="fs-6 text-gray-400 fw-bold ms-1">{{$medcines->count()}}</span></h3>
                   </div>
-                <div>  
+                <div>
                         <button type="button" class="btn btn-sm btn-flex btn-light btn-active-primary fw-bolder  " data-kt-menu-trigger="click"
                             data-kt-menu-placement="bottom-end">
                             <!--begin::Svg Icon | path: icons/duotune/general/gen031.svg-->
@@ -192,10 +193,6 @@
                             </form>
                             <!--end::Form-->
                         </div>
-                      
-                 
-
-
                 </div>
                 </div>
               </div>
@@ -203,10 +200,7 @@
             <!--begin::Row-->
           --}}
             <div class="row g-6 mb-6 g-xl-9 mb-xl-9">
-
                 @foreach ($medcines as $medcine )
-
-
                 <div class="col-md-4 col-xxl-4">
                     <!--begin::Card-->
                     <div class="card">
@@ -228,7 +222,7 @@
 
                             <!--end::Info-->
                             <!--begin::Follow-->
-                            <a href="#" class="btn btn-sm btn-light-primary border border-secondary">
+                            <a href="{{ URL::route('craetedavis' ,['medcine_1' =>Auth::user()->id,'medcine_2' => $medcine->id]) }}" class="btn btn-sm btn-primary border border-secondary">
                             <!--begin::Svg Icon | path: icons/duotune/arrows/arr012.svg-->
                             <span class="svg-icon svg-icon-3">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -249,8 +243,7 @@
             </div>
             <!--end::Row-->
 
-            <!--begin::Show more-->
-            <div class="d-flex flex-center">
+            {{-- <div class="d-flex flex-center">
                 <button class="btn btn-primary" id="kt_followers_show_more_button">
                     <!--begin::Indicator-->
                     <span class="indicator-label">Show more</span>
@@ -258,8 +251,7 @@
                     <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
                     <!--end::Indicator-->
                 </button>
-            </div>
-            <!--end::Show more-->
+            </div> --}}
         </div>
         <!--end::Container-->
     </div>
